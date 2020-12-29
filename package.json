@@ -2,6 +2,7 @@
   "name": "remix-sol2uml",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@remixproject/plugin-iframe": "0.3.3",
     "@testing-library/jest-dom": "^5.11.4",
