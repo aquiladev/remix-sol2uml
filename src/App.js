@@ -1,5 +1,6 @@
 import { createClient } from '@remixproject/plugin-iframe';
-import { convertUmlClassesToSvg, EtherscanParser } from 'sol2uml';
+import parser from '@solidity-parser/parser';
+import { convertUmlClassesToSvg } from 'sol2uml';
 import { convertNodeToUmlClass } from 'sol2uml/lib/parser';
 import { useState } from 'react';
 import Viewer from 'react-viewer';
@@ -8,12 +9,12 @@ import './App.css';
 
 function App() {
   const client = createClient();
-  const etherscanParser = new EtherscanParser();
   const [svg, setSvg] = useState();
   
   client.onload(() => {
     client.on('solidity', 'compilationFinished', async (target, source) => {
-      const ast = await etherscanParser.parseSourceCode(source.sources[target].content);
+      const ast = parser.parse(source.sources[target].content);
+      console.log(ast);
       const umlClass = convertNodeToUmlClass(ast, target)
       const solSvg = await convertUmlClassesToSvg(umlClass);
       setSvg(solSvg.substr(solSvg.indexOf('<svg ')));
