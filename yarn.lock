@@ -1436,10 +1436,10 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@remixproject/plugin@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@remixproject/plugin/-/plugin-0.2.1.tgz#04924b104fc9f34b8edeb7e55d9ff13392adcbd7"
-  integrity sha512-ewQITLRM4J92fUrgZXBrZtJjyUXa+bVZriozA+D04TqUR0VHAVZKwh8PW/9SdLE6B2mlMaOijMGAx1W+HnKHJg==
+"@remixproject/plugin@0.1.18":
+  version "0.1.18"
+  resolved "https://registry.yarnpkg.com/@remixproject/plugin/-/plugin-0.1.18.tgz#1f74aca46b84e8f87b58893942b113d6bb04808e"
+  integrity sha512-xJrqgl22ugRFMvN9tHcLZ8BTK4uGNBqYkIyme1tCWOVgQAB7PCQsTUgDFFDZDE4GmE7WcogZ/1Bv7U7c+ZjydQ==
 
 "@rollup/plugin-node-resolve@^7.1.1":
   version "7.1.3"

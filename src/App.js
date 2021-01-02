@@ -17,8 +17,7 @@ function App() {
   useEffect(() => {
     async function init() {
       if (!client) {
-        const d = createIframeClient();
-        setClient(d);
+        setClient(createIframeClient());
       } else {
         await client.onload();
         console.debug('Plugin: remix-sol2uml: remix client loaded');
