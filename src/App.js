@@ -1,4 +1,4 @@
-import { createClient } from '@remixproject/plugin-iframe';
+import { createClient } from '@remixproject/plugin';
 import parser from '@solidity-parser/parser';
 import { convertUmlClassesToSvg } from 'sol2uml';
 import { convertNodeToUmlClass } from 'sol2uml/lib/parser';
@@ -24,8 +24,8 @@ function App() {
       // const umlClass = convertNodeToUmlClass(ast, target)
       // const solSvg = await convertUmlClassesToSvg(umlClass);
       // setSvg(solSvg.substr(solSvg.indexOf('<svg ')));
-    })
-  })
+    });
+  });
   
   return (
     <div className="App">
