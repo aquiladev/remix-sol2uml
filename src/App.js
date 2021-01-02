@@ -8,6 +8,8 @@ import Viewer from 'react-viewer';
 import './App.css';
 
 function App() {
+  console.debug('Plugin: remix-sol2uml loading');
+
   const client = createClient();
   const [svg, setSvg] = useState();
   
