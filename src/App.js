@@ -1,4 +1,5 @@
-import { createClient } from '@remixproject/plugin';
+import React, { useEffect } from 'react'
+import { createIframeClient } from '@remixproject/plugin';
 import parser from '@solidity-parser/parser';
 import { convertUmlClassesToSvg } from 'sol2uml';
 import { convertNodeToUmlClass } from 'sol2uml/lib/parser';
@@ -8,24 +9,33 @@ import Viewer from 'react-viewer';
 import './App.css';
 
 function App() {
-  console.debug('Plugin: remix-sol2uml loading');
+  console.debug('Plugin: remix-sol2uml: starting');
 
-  const client = createClient();
+  const [client, setClient] = React.useState(null)
   const [svg, setSvg] = useState();
   
-  client.onload(() => {
-    console.debug('Plugin: remix-sol2uml loaded');
+  useEffect(() => {
+    async function init() {
+      if (!client) {
+        const d = createIframeClient();
+        setClient(d);
+      } else {
+        await client.onload();
+        console.debug('Plugin: remix-sol2uml: remix client loaded');
 
-    client.on('solidity', 'compilationFinished', async (target, source) => {
-      console.debug('Plugin: remix-sol2uml compilationFinished');
+        client.on('solidity', 'compilationFinished', async (target, source) => {
+          console.debug('Plugin: remix-sol2uml: compilationFinished');
 
-      // const ast = parser.parse(source.sources[target].content);
-      // console.debug(ast);
-      // const umlClass = convertNodeToUmlClass(ast, target)
-      // const solSvg = await convertUmlClassesToSvg(umlClass);
-      // setSvg(solSvg.substr(solSvg.indexOf('<svg ')));
-    });
-  });
+          const ast = parser.parse(source.sources[target].content);
+          console.debug('Plugin: remix-sol2uml: AST', ast);
+          const umlClass = convertNodeToUmlClass(ast, target)
+          const solSvg = await convertUmlClassesToSvg(umlClass);
+          setSvg(solSvg.substr(solSvg.indexOf('<svg ')));
+        });
+      }
+    }
+    init();
+  })
   
   return (
     <div className="App">
