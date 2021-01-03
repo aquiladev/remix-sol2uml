@@ -25,9 +25,9 @@ function App() {
         client.on('solidity', 'compilationFinished', async (target, source) => {
           console.debug('Plugin: remix-sol2uml: compilationFinished');
 
-          console.log(source.sources[target].content);
           const ast = parser.parse(source.sources[target].content);
           console.debug('Plugin: remix-sol2uml: AST', ast);
+          
           const umlClass = convertNodeToUmlClass(ast, target)
           const solSvg = await convertUmlClassesToSvg(umlClass);
           setSvg(solSvg.substr(solSvg.indexOf('<svg ')));
