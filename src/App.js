@@ -44,7 +44,7 @@ function App() {
         {
           client ? 
             <>
-              { isLoaded ?
+              { isClientLoaded ?
                 <>
                   {
                     svg ?
