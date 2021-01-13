@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { createIframeClient } from '@remixproject/plugin';
+import { createClient } from "@remixproject/plugin-webview";
+import { PluginClient } from '@remixproject/plugin';
 import parser from '@solidity-parser/parser';
 import { convertUmlClassesToSvg } from 'sol2uml';
 import { convertNodeToUmlClass } from 'sol2uml/lib/parser';
 import Viewer from 'react-viewer';
 
 import './App.css';
+
 
 function App() {
   console.debug('Plugin: remix-sol2uml: starting');
@@ -17,7 +19,7 @@ function App() {
   useEffect(() => {
     async function init() {
       if (!client) {
-        setClient(createIframeClient());
+        setClient(createClient(new PluginClient()));
       } else {
         await client.onload();
         setIsClientLoaded(true);
@@ -59,7 +61,10 @@ function App() {
                       zoomSpeed={0.2}
                       minScale={1}
                       images={[{src: `data:image/svg+xml;base64,${btoa(svg)}`}]} /> :
-                    <div>Compile smart contract and come back!</div>
+                    <>
+                    <h2>This plugin generates UML diagrams for Solidity contracts.</h2>
+                    <div className='small'>Instructions:<br/>1. Compile a smart contract.<br/>2. Come back here to view the diagram.<br/>Use the mouse to move the diagram.<br/>Use the scroll wheel to zoom.</div>
+                    </>
                   }
                 </> :
                 <div>Waiting for connection to <a href='https://remix.ethereum.org/' className='App-link'>Remix</a></div>
