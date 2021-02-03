@@ -38,7 +38,7 @@ function App() {
       }
     }
     init();
-  })
+  },[client])
   
   return (
     <div className="App">
