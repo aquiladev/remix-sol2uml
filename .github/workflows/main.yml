@@ -36,7 +36,8 @@ jobs:
           publish_dir: ./build
 
       - name: Upload to IPFS
-        uses: aquiladev/ipfs-action@v0.1.5
+        uses: aquiladev/ipfs-action@v0.1.6
+        id: ipfs_dapp_upload
         with:
           path: ./build
           service: infura
@@ -57,6 +58,8 @@ jobs:
           tag_name: ${{ steps.tag_version.outputs.new_tag }}
           release_name: Release ${{ steps.tag_version.outputs.new_tag }}
           body: |
+            [https://cloudflare-ipfs.com/ipfs/${{ steps.ipfs_dapp_upload.outputs.hash }}/](https://cloudflare-ipfs.com/ipfs/${{ steps.ipfs_dapp_upload.outputs.hash }}/)
+
             ${{ steps.tag_version.outputs.changelog }}
           draft: false
           prerelease: false
