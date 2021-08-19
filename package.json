@@ -6,6 +6,7 @@
   "dependencies": {
     "@remixproject/plugin": "^0.3.9",
     "@remixproject/plugin-webview": "^0.3.9",
+    "@solidity-parser/parser": "^0.9.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -14,7 +15,7 @@
     "react-scripts": "4.0.1",
     "react-viewer": "3.2.2",
     "rewire": "5.0.0",
-    "sol2uml": "1.1.26",
+    "sol2uml": "1.1.29",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

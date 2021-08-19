@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { createClient } from "@remixproject/plugin-webview";
+import { createClient } from '@remixproject/plugin-webview';
 import { PluginClient } from '@remixproject/plugin';
 import parser from '@solidity-parser/parser';
 import { convertUmlClassesToSvg } from 'sol2uml';
@@ -7,7 +7,6 @@ import { convertNodeToUmlClass } from 'sol2uml/lib/parser';
 import Viewer from 'react-viewer';
 
 import './App.css';
-
 
 function App() {
   console.debug('Plugin: remix-sol2uml: starting');
@@ -38,11 +37,11 @@ function App() {
       }
     }
     init();
-  },[client])
+  }, [client])
   
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className='App'>
+      <header className='App-header'>
         {
           client ? 
             <>

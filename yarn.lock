@@ -1518,6 +1518,13 @@
   dependencies:
     antlr4ts "^0.5.0-alpha.4"
 
+"@solidity-parser/parser@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@solidity-parser/parser/-/parser-0.9.1.tgz#c63aaca2a07f2994d85b43afdbf90b454b62e16e"
+  integrity sha512-ewNo+ZEQX8mFUOlTK6+0IYvM++6+iEeRBIBg4Mh8ghgRX72bkXJh6AWLWe/SG5+3WPdDL84MSsAlrvWFsGRdFw==
+  dependencies:
+    antlr4 "^4.8.0"
+
 "@surma/rollup-plugin-off-main-thread@^1.1.1":
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/@surma/rollup-plugin-off-main-thread/-/rollup-plugin-off-main-thread-1.4.2.tgz#e6786b6af5799f82f7ab3a82e53f6182d2b91a58"
@@ -2288,6 +2295,11 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   integrity sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==
   dependencies:
     color-convert "^2.0.1"
+
+antlr4@^4.8.0:
+  version "4.9.2"
+  resolved "https://registry.yarnpkg.com/antlr4/-/antlr4-4.9.2.tgz#abbc53d275954b1b6f4d8b3468b4a2cb258121fc"
+  integrity sha512-UjMSlenUORL+a+6g4RNZxRh5LcFWybRi2g0ASDBpgXBY6nlavg0BRVAVEQF0dz8jH6SyX3lV7uP5y/krJzc+Hw==
 
 antlr4ts@^0.5.0-alpha.4:
   version "0.5.0-alpha.4"
@@ -10272,10 +10284,10 @@ sockjs@0.3.20:
     uuid "^3.4.0"
     websocket-driver "0.6.5"
 
-sol2uml@1.1.26:
-  version "1.1.26"
-  resolved "https://registry.yarnpkg.com/sol2uml/-/sol2uml-1.1.26.tgz#ef91b21ba679c75c4a69e7aa950a85ce137d5237"
-  integrity sha512-hAKJrm2uer9/9lsWZmcMkT/5CX7p0Nk3aR4L95y4mbJ+Skv9ETgU6wkg7EyZx2ZV0UmWycXq6FzJvLMaCWP2VQ==
+sol2uml@1.1.29:
+  version "1.1.29"
+  resolved "https://registry.yarnpkg.com/sol2uml/-/sol2uml-1.1.29.tgz#8ae5766318baebb78bb634af6daea9614f7a4ca3"
+  integrity sha512-o5d+1zuf/HHfOjHp9xW2s2ysszFJbIvpWq3yDYkzieYriF4AmQLr7lNEyWn2V91pzE+fV3uchBfuaAisEvP8/w==
   dependencies:
     "@solidity-parser/parser" "^0.13.2"
     axios "^0.21.1"
