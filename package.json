@@ -14,7 +14,7 @@
     "react-scripts": "4.0.1",
     "react-viewer": "3.2.2",
     "rewire": "5.0.0",
-    "sol2uml": "1.1.29",
+    "sol2uml": "1.1.21",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
